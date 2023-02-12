@@ -1,0 +1,568 @@
+/*CSS RESET*/
+    /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*CSS TEMPLATE */
+*{
+  box-sizing: border-box;
+}
+body{
+  background: #000;
+  margin: 0 0 0 0 ;
+  padding: 0 0 0 0;
+}
+body a{
+  text-decoration: none;
+}
+#wrapper{
+  margin: 15px auto;
+  padding: 20px 30px 30px;
+  max-width: 1000px;
+  background: #fff;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+/*HEADER*/
+#header-container{
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 49px;
+  box-shadow: 0 0 10px  gray;
+}
+#header-wrapper{
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+.header{
+  max-width: 400px;
+	float: left;
+	margin-right: 28px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.header img{
+  height: 50px;
+  width: 150px;
+  display: block;
+  margin: 0 110px;
+}
+.header h1, .header p{
+  font: 20px "Montserrat",Arial,Sans-Serif ;
+  color: #fff;
+  font-weight: normal;
+  margin: 0 80px;
+  text-transform: uppercase;
+  line-height: 50px;
+}
+.header a, .header a:hover{
+  color: #fff;
+  text-decoration: none;
+}
+.clear{
+  clear: both;
+}
+
+/*NAVBAR*/
+.navbar .toggler-navbar {
+  margin-right: 15px;
+  position: absolute;
+  top: 20%;
+  left: 20px;
+  display: block;
+}
+.sidebar {
+    position: fixed;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f8f8f8;
+    text-align: left;
+    font-size: 20px;
+    transform: rotate3D(0,1,0, 90deg);
+    transform-origin: left center;
+    transition: .5s;
+    z-index: 9999;
+    font-family: 'Roboto', Arial, Sans-Serif;
+}
+.sidebar.open {
+    transform: rotate3D(0,0,1, 0deg);
+}
+.sidebar ul{
+    list-style: none;
+}
+.sidebar ul li{
+  border-bottom: 2px dotted #d6d6d6;
+  color: #000;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+    background: #0000003f;
+}
+
+.sidebar li a {
+    color: #2e2e2e;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    outline: none;
+}
+.hamburger-menu {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 0;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+.hamburger-menu span:nth-child(1) {
+    top: 2.5px;
+}
+
+.hamburger-menu span:nth-child(2) {
+    top: 11px;
+}
+
+.hamburger-menu span:nth-child(3) {
+    top: 21px;
+}
+
+.hamburger-menu.open span:nth-child(1) {
+    top: 15px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.hamburger-menu.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.hamburger-menu.open span:nth-child(3) {
+    top: 14px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+/*CSS SLIDESHOW */
+.mySlides {display: none;}
+img {vertical-align: middle;}
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: 50px auto;
+}
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+/* The dots/bullets/indicators */
+.dot {
+  height: 1.2px;
+  width: 40px;
+  margin: 0 2px;
+  background-color: #bbb;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active {
+  background-color: #717171;
+}
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/*CSS SCROOL*/
+/*  Navigation Menu Horizontal Scroll by igniel.com */
+.jdl{
+  font-family: 'Anton', Sans-Serif;
+}
+.ignielHorizontal ul {
+  background-color: transparent; /* Warna background menu */
+  max-width: 100%; /* Lebar maksimal menu */
+  overflow-x: auto;
+}
+.ignielHorizontal {
+  color: #000;
+  line-height: 0px;
+  overflow: hidden;
+}
+.ignielHorizontal a {
+  font-size: 14px;
+  color: #000;
+  text-decoration: none;
+  padding: 10px 13px;
+  line-height: 1.5em;
+  display: block;
+}
+.ignielHorizontal a:hover {
+  background-color: rgba(0,0,0,.25);
+  color: #fff;
+  text-decoration: none;
+}
+.ignielHorizontal ul, .ignielHorizontal li {
+  list-style: none;
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0px;
+  padding: 0px;
+}
+.ignielHorizontal img{
+  display: inline-block;
+  width: 100px;
+  height:100px;
+  margin: 10px 5px 10px;
+  border-radius: 50%;
+}
+.ignielHorizontal .title{
+  text-align: center;
+  margin: 5px;
+}
+/* CSS COLUMB TESTI */
+#testi{
+  color: #fff;
+  margin: 15px auto;
+  padding: 20px 30px 30px;
+  max-width: 1000px;
+  background: transparent;
+  overflow: hidden;
+}
+#testi img{
+  width: 300px;
+  height: 350px;
+  display: inline-block;
+  border-radius: 0;
+  margin: 0 15px;
+}
+#testi .title{
+  color: #fff;
+  font-size: 18px;
+}
+.article{
+  display: block;
+  margin: 20px auto;
+}
+.article a{
+  text-decoration: none;
+}
+.article img{
+  width: 320px;
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+}
+.article .teks1{
+  font-family: Sans-Serif;
+  margin: 10px auto;
+  font-size: 14pt;
+  font-weight: bold;
+  font-style: normal;
+  color: red;
+}
+.label{
+  color: red;
+  font-weight: bold;
+  margin: 8px auto;
+}
+.link{
+  margin: 15px auto;
+  color: red;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+}
+
+#lay{
+  padding: 10px;
+  background: #fafafa;
+  margin: 20px auto;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+#lay img{
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: 0 auto;
+}
+#lay .tak{
+  text-align: center;
+  margin: 15px auto;
+  display: block;
+}
+#lay .btn{
+  background: green;
+  padding: 10px;
+  margin: 15px auto;
+  display: block;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 12pt;
+}
+/* CSS FOOTER */
+#footer-container .fotlink{
+  color: gray;
+  margin: 10px auto;
+  display: block;
+}
+#footer-container .fotlink a{
+  text-decoration: none;
+  margin: 0 30px;
+  font-size: 10pt;
+  font-family: 'Anton', Sans-Serif;
+}
+.footer{
+  text-align: center;
+  color: gray;
+  margin-bottom: 22px;
+}
+.footer ul{
+  text-align: center;
+}
+.footer li{
+  display: inline-block;
+  margin: 0 15px 8px;
+}
+.footer a{
+  text-decoration: none;
+}
+.footer .fotmed{
+display: block;
+}
+.fotmed ul{
+  text-align: center;
+}
+.fotmed li{
+  display: inline-block;
+  list-style: none;
+  color: gray;
+  margin: 0 10px;
+}
+.fotmed li a{
+  text-align: center;
+  text-decoration: none;
+  font-size: 28pt;
+}
+.jfot{
+  text-align: center;
+  color: gray;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Anton", Sans-Serif;
+}
+
+
+/* CSS RESVONSIVE */
+/* for device */
+@media only screen and (min-width: 768px) {
+.navbar .toggler-navbar {
+  margin-right: 15px;
+  position: absolute;
+  top: 20%;
+  left: 30px;
+  display: block;
+}
+.header{
+  max-width: 1000px;
+	float: left;
+	margin-right: 28px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.header img{
+  height: 55px;
+  width: 160px;
+  display: block;
+  margin: 0 350px;
+}
+.article{
+  display: inline-block;
+  height: 150px;
+  width: 250px;
+  margin: 15px 10px;
+}
+.article img{
+  width: 250px;
+  height: 150px;
+  display: inline-block;
+  margin: 0;
+}
+.link{
+  margin: 50px 0;
+  display: block;
+  font-size: 25px;
+}
+.menufot ul li{
+  display: inline-block;
+}
+.menufot hr{
+  display: none;
+}
+.jfot{
+  display: none;
+}
+.menufot{
+  position: relative;
+}
+.fotlink{
+  margin-top: 20px;
+  font-size: 18pt;
+}
+.menufot .fotmed{
+display: block;
+}
+.fotmed ul{
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+.fotmed li{
+  display: inline-block;
+  list-style: none;
+  color: gray;
+  margin: 0 10px;
+}
+.fotmed li a{
+  text-align: right;
+  text-decoration: none;
+  font-size: 28pt;
+  margin-top: 0;
+}
+.jdl{
+  font-size: 25pt;
+  text-align: center;
+}
+.ignielHorizontal img{
+  display: inline-block;
+  width: 250px;
+  height:250px;
+  margin: 20px 10px 20px;
+  border-radius: 50%;
+}
+.title{
+  font-size: 28pt;
+  text-align: center;
+}
+}
+@media screen and (max-width: 450px){
+  .ignielHorizontal a {
+    font-size: 13px;
+    padding: 8px 11px;
+  }
+}
+@media screen and (max-width: 360px){
+  .ignielHorizontal a {
+    font-size: 12px;
+    padding: 7px 10px;
+  }
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+
