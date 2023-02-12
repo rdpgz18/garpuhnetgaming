@@ -1,0 +1,9 @@
+Disallow: 
+
+User-agent: *
+
+Disallow: /search
+
+Allow: /
+
+Sitemap: https://rdpgz18.github.io/garpuhnetgaming/sitemap.xml
