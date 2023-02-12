@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta content='#111' name='theme-color'/>
+  <meta content='#111' name='msapplication-navbutton-color'/>
+  <meta content='yes' name='apple-mobile-web-app-capable'/>
+  <meta content='#111' name='apple-mobile-web-app-status-bar-style'/>
+  <link rel="stylesheet" href="asset/css/style.css">
+  <link rel="shortcut icon" href="asset/img/fav.png">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+      <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>garpuhnetgaming</title>
+</head>
+<body>
+  
+   <div id="header-container">
+    <header id="header-wrapper">
+      <div class="header">
+      <a class="logo" href="index.html?m=1" target="_self">
+        <img src="asset/img/logo.png" alt="logo"/>
+      </a>
+      </div>
+      <nav class="navbar">
+        <a class="toggler-navbar">
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </a>
+      </nav>
+        <div class="clear"></div>
+    </header>
+  </div>
+  <div class="sidebar">
+        <ul>
+            <li><a href="index.html?m=1" target="_self">Home</a></li>
+            <li><a href="about.html" target="_self">About</a></li>
+            <li><a href="layanan.html" target="_self">Layanan</a></li>
+        </ul>
+    </div>
+    <!-- code of source -->
+    <div id="wrapper">
+      <br>
+      <div class="container mt-5 formlg">
+        <div class="col-lg-6 col-lg-offset-3">
+            <h4>Check Out</h4>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    Checkout
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label>Nama</label>
+                        <input type="text" name="name" class="form-control" placeholder="Nama" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" class="form-control" placeholder="Email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label>Nomor Kontak / WhatsApp</label>
+                        <input type="text" name="phone" class="form-control" placeholder="Nomor Kontak / WhatsApp" id="phone">
+                    </div>
+                    <div class="form-group">
+                        <label>Pilih Produk</label>
+                        <select name="product" class="form-control" id="produk">
+                            <option value="">-- Pilih Produk --</option>
+                            <option value="warior">Warior</option>
+                            <option value="elite">Eite</option>
+                            <option value="master">Master</option>
+                            <option value="gm">Grand Master</option>
+                            <option value="legend">Legend</option>
+                            <!-- produk paket -->
+                            <option value="gm v - efic v">GM-V - EFIC -V</option>
+                            <option value="efic v - legend v">Evic V - Legend V</option>
+                            <option value="Mytic - Glorry">Mytic - Glorry</option>
+                            
+                    </div>
+                    <div class="form-group">
+                        <label>Catatan</label>
+                        <textarea name="description" class="form-control" rows="3" id="description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success send">Pesan via WhatsApp</button>
+                    </div>
+ 
+                    <div id="text-info"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="panel-alert bg-warning" style="padding:10px;">
+     Note : "Silahkan kirim id anda di WhatsApp kami agar data anda aman dan terlindungi privacy."
+     </div>
+    
+    
+    <script>
+    $(document).on('click','.send', function(){
+    /* Inputan Formulir */
+    var input_name          = $("#name").val(),
+        input_email         = $("#email").val(),
+        input_phone         = $("#phone").val(),
+        input_product       = $("#produk").val(),
+        input_description   = $("#description").val();
+ 
+    /* Pengaturan Whatsapp */
+    var walink      = 'https://web.whatsapp.com/send',
+        phone       = '6283891162392',
+        text        = 'Halo saya ingin memesan ',
+        text_yes    = 'Pesanan Anda berhasil terkirim.',
+        text_no     = 'Isilah formulir terlebih dahulu.';
+ 
+    /* Smartphone Support */
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        var walink = 'whatsapp://send';
+    }
+ 
+    if(input_name != "" && input_phone != "" && input_product != ""){
+        /* Whatsapp URL */
+        var checkout_whatsapp = walink + '?phone=' + phone + '&text=' + text + '%0A%0A' +
+            '*Nama* : ' + input_name + '%0A' +
+            '*Alamat Email* : ' + input_email + '%0A' +
+            '*Nomor Kontak / Whatsapp* : ' + input_phone + '%0A' +
+            '*Produk* : ' + input_product + '%0A' +
+            '*Catatan* : ' + input_description + '%0A';
+ 
+        /* Whatsapp Window Open */
+        window.open(checkout_whatsapp,'_blank');
+        document.getElementById("text-info").innerHTML = '<div class="alert alert-success">'+text_yes+'</div>';
+    } else {
+        document.getElementById("text-info").innerHTML = '<div class="alert alert-danger">'+text_no+'</div>';
+    }
+});
+</script>
+      
+    </div>
+    
+    <!-- code of source end -->
+    <div id="footer-container" class="bg-dark">
+      <div class="menufot">
+        <div class="afot"></div>
+        <div class="fotlink">
+          <a href="about.html">TENTANG GARPUHNETGAMING</a>
+          <hr/>
+          <a href="index.html?m=1">BERANDA</a>
+          <hr/>
+          <a href="layanan.html?m=1">PRODUK</a>
+          <hr/>
+          </div>
+          <div class="fotmed">
+            <p class="jfot">FOLLOW GARPUHNETGAMING</p>
+            <ul>
+              <li><a href="#"><iconify-icon icon="ri:facebook-fill"></iconify-icon></a></li>
+              <li><a href="#"><iconify-icon icon="uil:instagram"></iconify-icon></a></li>
+              <li><a href="#"><iconify-icon icon="teenyicons:twitter-outline"></iconify-icon></a></li>
+              </ul>
+              </div>
+              </div>
+              <hr/>
+              <footer class="footer">
+                <ul>
+                  <li><a href="contact.html?m=1">Contact</a></li>
+                  <li><a href="privaci&policy.html?m=1">Privacy & Policy</a></li>
+                  </ul>
+                  &copy;&nbsp;<script>document.write(new Date().getFullYear());</script>&nbsp;<a href="index.html?m=1" title="home">GARPUHNETGAMING.</a> ALL RIGHT RESERVED</footer></div>
+                  <script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+                  <script src="asset/js/script.js"></script>
+                  </body>
+                  </html>
