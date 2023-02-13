@@ -380,6 +380,8 @@ img {vertical-align: middle;}
 .payment img{
   width: 320px;
   height: 200px;
+  display: block;
+  margin: 0 auto;
 }
 #lay{
   padding: 10px;
@@ -514,8 +516,10 @@ display: block;
   display: block;
 }
 .payment img{
-  width: 320px;
-  height: 200px;
+  width: 700px;
+  height: 300px;
+  display: block;
+  margin : 0 auto;
 }
 .link{
   margin: 50px 0;
