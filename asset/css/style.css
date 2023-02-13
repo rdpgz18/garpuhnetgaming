@@ -373,7 +373,14 @@ img {vertical-align: middle;}
   font-weight: bold;
   text-align: center;
 }
-
+.payment{
+  margin-top: 20px;
+  display: block;
+}
+.payment img{
+  width: 320px;
+  height: 200px;
+}
 #lay{
   padding: 10px;
   background: #fafafa;
@@ -400,6 +407,17 @@ img {vertical-align: middle;}
   color: #fff;
   border-radius: 5px;
   font-size: 12pt;
+}
+.icon-whatsapp {
+  height: 50px;
+  width: 50px;
+  background-color: #eff0f1;
+  background-image: url('asset/img/iwa.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border:5px solid #eff0f1;
+  border-radius: 38%/38%;
 }
 /* CSS FOOTER */
 #footer-container .fotlink{
