@@ -509,6 +509,14 @@ display: block;
   display: inline-block;
   margin: 0;
 }
+.payment{
+  margin-top: 20px;
+  display: block;
+}
+.payment img{
+  width: 320px;
+  height: 200px;
+}
 .link{
   margin: 50px 0;
   display: block;
