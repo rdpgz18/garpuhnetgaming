@@ -50,10 +50,10 @@
       <br>
       <div class="container mt-5 formlg">
         <div class="col-lg-6 col-lg-offset-3">
-            <h4>Check Out</h4>
+            <h4>Check Out Jasa joki murah</h4>
             <div class="panel panel-success">
                 <div class="panel-heading">
-                    Checkout
+                    Checkout joki murah
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
@@ -69,6 +69,24 @@
                         <input type="text" name="phone" class="form-control" placeholder="Nomor Kontak / WhatsApp" id="phone">
                     </div>
                     <div class="form-group">
+                      <label for="star">Jumlah Star</label>
+                      <input type="text" name="star" class="form-control" placeholder="Jumlah star" id="star" value="20">
+                    </div>
+                    <div class="form-group">
+                      <label for="hero">Hero push</label>
+                      <input type="text" name="hero" class="form-control" placeholder="Minimal Reques 3 hero Cth: Alucard , Gatot Kaca, Mia" id="hero"/>
+                    </div>
+                    <div class="form-group">
+                      <label for="logvia">Login Via</label>
+                      <select class="form-control" name="logvia" id="logvia">
+                          <option value="Moonton">
+                            Moonton (Rekomendasi)
+                          </option>
+                          <option value="Facebook">Facebook</option>
+                          <option value="Tik Tok">Tik Tok</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
                         <label>Pilih Produk</label>
                         <select name="product" class="form-control" id="produk">
                             <option value="">-- Pilih Produk --</option>
@@ -77,12 +95,15 @@
                             <option value="master">Master</option>
                             <option value="gm">Grand Master</option>
                             <option value="legend">Legend</option>
+                            <option value="classic">Clssic</option>
                             <!-- produk paket -->
                             <option value="gm v - efic v">GM-V - EFIC -V</option>
                             <option value="efic v - legend v">Evic V - Legend V</option>
-                            <option value="Mytic - Glorry">Mytic - Glorry</option>
+                            <option value="MCL Weakly">MCL Weakly</option>
+                            <option value="MCL Gold">MCL Weakly</option>
                             
                     </div>
+                    
                     <div class="form-group">
                         <label>Catatan</label>
                         <textarea name="description" class="form-control" rows="3" id="description"></textarea>
@@ -98,7 +119,7 @@
     </div>
     
     <div class="panel-alert bg-warning" style="padding:10px;">
-     Note : "Silahkan kirim id anda di WhatsApp kami agar data anda aman dan terlindungi privacy."
+     Note : "Silahkan kirim id/nickname/password anda lewat WhatsApp kami, data anda aman dan terlindungi privacy."
      </div>
     
     
@@ -108,13 +129,16 @@
     var input_name          = $("#name").val(),
         input_email         = $("#email").val(),
         input_phone         = $("#phone").val(),
+        input_star          = $("#star").val(),
+        input_hero          = $("#hero").val(),
+        input_logvia        = $("#logvia").val(),
         input_product       = $("#produk").val(),
         input_description   = $("#description").val();
  
     /* Pengaturan Whatsapp */
     var walink      = 'https://web.whatsapp.com/send',
         phone       = '6283186755850',
-        text        = 'Halo saya ingin memesan jasa anda',
+        text        = 'Halo saya ingin memesan ',
         text_yes    = 'Pesanan Anda berhasil terkirim.',
         text_no     = 'Isilah formulir terlebih dahulu.';
  
@@ -129,6 +153,9 @@
             '*Nama* : ' + input_name + '%0A' +
             '*Alamat Email* : ' + input_email + '%0A' +
             '*Nomor Kontak / Whatsapp* : ' + input_phone + '%0A' +
+            '*Jumlah Star* : ' + input_star + '%0A' +
+            '*Hero* : ' + input_hero + '%0A' +
+            '*Login via* : ' + input_logvia + '%0A' +
             '*Produk* : ' + input_product + '%0A' +
             '*Catatan* : ' + input_description + '%0A';
  
